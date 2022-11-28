@@ -1,0 +1,235 @@
+﻿<UserControl x:Class="PersonalOrganizer.MVVM.View.DailyRoutineView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="using PersonalOrganizer.Resources.ViewModel;.View"
+             Height="670"
+              Width="1080">
+    <Border Background="Transparent"
+            CornerRadius="0,0,15,0">
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            <Border  Background="{StaticResource CoolBlue}"
+                    CornerRadius="5"
+                    HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                    Height="50"
+                    Margin="30,30"
+                    >
+            <TextBlock Text="DailyRoutine" 
+                       Style="{StaticResource SectionTitle}"/>
+            </Border>
+           
+             <Border MinHeight="50"
+                        MaxHeight="300"
+                        Grid.Column="1"
+                        Visibility="Collapsed"
+                        x:Name="AddDailyRoutineWrapper"
+                        Margin="30"
+                        Background="{StaticResource CoolBlue}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="5"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Menu Background="Transparent"
+                                  VerticalAlignment="Center" 
+                                  Grid.Column="0"
+                                  Panel.ZIndex="2">
+                                <MenuItem Header="00"
+                                          Width="50"
+                                          Height="50"
+                                          FontSize="20"
+                                          Foreground="White"
+                                          Padding="20,0,0,0"
+                                          x:Name="HourText"
+                                          >
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="00"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="01"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="02"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="03"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="04"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="05"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="06"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="07"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="08"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="09"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="10"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="11"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="12"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="13"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="14"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="15"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="16"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="17"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="18"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="19"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="20"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="21"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="22"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedHour" Header="23"/>
+                                </MenuItem>
+                            </Menu>
+                                <TextBlock Text=":"
+                                       VerticalAlignment="top"
+                                       Margin="0,25"
+                                       HorizontalAlignment="Center"
+                                       Foreground="White"
+                                       FontSize="25"
+                                       Grid.Column="1"/>
+                            <Menu Background="Transparent"
+                                  Grid.Column="2"
+                                  Panel.ZIndex="2"
+                                  VerticalAlignment="Center">
+                                <MenuItem Width="50" 
+                                          Height="50"
+                                          Header="00"
+                                          FontSize="20"
+                                          Foreground="White"
+                                          Padding="5,0,0,0"
+                                          x:Name="MinuteText"
+                                          >
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="00"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="01"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="02"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="03"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="04"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="05"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="06"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="07"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="08"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="09"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="10"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="11"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="12"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="13"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="14"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="15"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="16"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="17"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="18"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="19"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="20"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="21"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="22"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="23"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="24"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="25"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="26"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="27"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="28"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="29"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="30"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="31"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="32"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="33"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="34"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="35"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="36"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="37"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="38"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="39"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="40"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="41"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="42"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="43"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="44"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="45"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="46"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="47"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="48"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="49"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="50"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="51"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="52"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="53"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="54"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="55"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="56"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="57"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="58"/>
+                                    <MenuItem BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource CoolBlue}" Click="SelectedMinute" Header="59"/>
+                                </MenuItem>
+                            </Menu>
+                        </Grid>
+                            <Border Grid.Column="1"   
+                                      Margin="0,25"
+                                      VerticalAlignment="Center">
+                                    <TextBox Background="Transparent"
+                                     Foreground="white"
+                                     Text="Insert daily routine...(max 1000 words)"
+                                     FontSize="18"
+                                     GotFocus="TextBox_GotFocus"
+                                     LostFocus="TextBox_LostFocus"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"
+                                      VerticalAlignment="Top"
+                                     HorizontalAlignment="Stretch"
+                                     x:Name="DailyText"
+                                     MaxLength="1000"
+                                     />
+                                </Border>
+                            <Grid Grid.Column="3"
+                              Margin="0,25"
+                              VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Button Background="Transparent"
+                                    Click="AddDailyRoutineButton_Click">
+                                    <Image Source="/Images/confirm.png" Width="30" />
+                                </Button>
+                                <Button 
+                                    Grid.Column="1" 
+                                    Background="Transparent" 
+                                    Click="RemoveDailyRoutineButton_Click">
+
+                                    <Image Source="/Images/trash.png"  Width="30"  />
+                                </Button>
+                            </Grid>
+                        </Grid>
+             </Border>
+                <Border MinHeight="50"
+                        MaxHeight="300"
+                        Grid.Column="1"
+                        Margin="30"
+                        Visibility="Visible"
+                        x:Name="AddButtonWrapper"
+                        Background="{StaticResource CoolBlue}">
+                        <Button Background="Transparent"
+                                     Foreground="white"
+                                     Content="+"
+                                     FontSize="35"
+                                     VerticalAlignment="Stretch"
+                                     HorizontalAlignment="Stretch"
+                                    Click="AddButton_Click"/>
+                    </Border>
+            
+            </Grid>
+            <ScrollViewer Height="550" VerticalScrollBarVisibility="Hidden">
+                <Grid Margin="30,0" x:Name="GridContentWrapper">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </ScrollViewer>
+        </StackPanel>
+    </Border>
+</UserControl>

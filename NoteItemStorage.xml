@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGenericItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GenericItem>
+    <ID>0</ID>
+    <cheched>false</cheched>
+    <Description />
+    <Date>2022-11-28T00:00:00+01:00</Date>
+  </GenericItem>
+</ArrayOfGenericItem>

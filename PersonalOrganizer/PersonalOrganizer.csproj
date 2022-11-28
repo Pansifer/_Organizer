@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\confirm.png" />
+    <None Remove="Images\lArrow.png" />
+    <None Remove="Images\ndGnocca.jpg" />
+    <None Remove="Images\rArrow.png" />
+    <None Remove="Images\trash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\confirm.png" />
+    <Resource Include="Images\lArrow.png" />
+    <Resource Include="Images\ndGnocca.jpg" />
+    <Resource Include="Images\rArrow.png" />
+    <Resource Include="Images\trash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MVVM\View\ToDoListView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\DaysThinksView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\DailyRoutineView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net6.0-windows\runtimes\" />
+    <Folder Include="Data\" />
+  </ItemGroup>
+
+</Project>

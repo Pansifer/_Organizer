@@ -1,0 +1,53 @@
+﻿<Application x:Class="PersonalOrganizer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PersonalOrganizer"
+             xmlns:viewModel ="clr-namespace:PersonalOrganizer.MVVM.ViewModel"
+             xmlns:view="clr-namespace:PersonalOrganizer.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme\MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme\SectionTitleTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="CoolBlue" Color="#568C82"/>
+            <SolidColorBrush x:Key="LightGreen" Color="#3a7847"/>
+            <SolidColorBrush x:Key="DarkGreen" Color="#246932"/>
+            <Style TargetType="{x:Type DatePickerTextBox}">
+                <Setter Property="Visibility" Value="Hidden" />
+                <Setter Property="Width" Value="0" />
+            </Style>
+            <Style TargetType="Border">
+                <Style.Setters>
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <Setter Property="BorderThickness" Value="0" />
+                </Style.Setters>
+            </Style>
+            <Style TargetType="Button">
+                <Style.Setters>
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <Setter Property="BorderThickness" Value="0" />
+                </Style.Setters>
+            </Style>
+            <Style TargetType="TextBox">
+                <Style.Setters>
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <Setter Property="BorderThickness" Value="0" />
+                </Style.Setters>
+            </Style>
+            <DataTemplate DataType="{x:Type  viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+             <DataTemplate DataType="{x:Type viewModel:DailyRoutineViewModel}">
+                <view:DailyRoutineView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ToDoListViewModel}">
+                <view:ToDoListView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:DaysThinksViewModel}">
+                <view:DaysThinksView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

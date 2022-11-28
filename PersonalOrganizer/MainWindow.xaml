@@ -1,0 +1,109 @@
+﻿<Window x:Class="PersonalOrganizer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonalOrganizer"
+        xmlns:viewModel ="clr-namespace:PersonalOrganizer.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Height="720" 
+        Width="1280"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="true"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Border Background="{StaticResource LightGreen}"
+            CornerRadius="5">
+        <StackPanel>
+            <Border 
+                    Height="50"
+                    MouseDown="Window_MouseDown"
+                    
+                    Background="{StaticResource DarkGreen}" 
+                    >
+                <Border 
+                        Width="150"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Stretch">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0">
+                            <Button Background="Transparent"
+                                Content="---"
+                                Foreground="white"
+                                        Click="ButtonMinimize_Click"
+                                        BorderThickness="0"
+                                        >
+                            </Button>
+                        </Border>
+                        <Border Grid.Column="1">
+                            <Button Background="Transparent"
+                                        Click="ButtonClose_Click"
+                                        BorderThickness="0"
+                                    Content="X"
+                                Foreground="white"
+                                        />
+                        </Border>
+
+                    </Grid>
+                </Border>
+            </Border>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"  />
+                    <ColumnDefinition Width="693*" />
+                    <ColumnDefinition Width="388*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Background="{StaticResource DarkGreen}">
+                    <StackPanel Orientation="Vertical">
+                        <Border Height="100">
+                            <TextBlock 
+                            Text="Organizer"
+                            Foreground="White"
+                            FontSize="30"
+                            FontStyle="Italic"
+                            FontWeight="Bold"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            
+                             />
+                        </Border>
+                        <RadioButton
+                             Content="Home" 
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding HomeViewCommand}"
+                             IsChecked="True"
+                       />
+                        <RadioButton Content="Daily routine" 
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding DailyRoutineViewCommand}"
+                       />
+                        <RadioButton Content="Todo task" 
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ToDoListViewCommand}"
+                       />
+                        <RadioButton Content="Day's thinks" 
+                             Style="{StaticResource MenuButtonTheme}" 
+                             Command="{Binding DaysThinksViewCommand}"
+                       />
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="1" Grid.ColumnSpan="2">
+                    <ContentControl Content="{Binding CurrentView}"/>
+                </Border>
+            </Grid>
+        </StackPanel>
+
+
+
+    </Border>
+
+</Window>
