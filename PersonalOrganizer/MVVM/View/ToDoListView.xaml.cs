@@ -227,7 +227,7 @@ namespace PersonalOrganizer.MVVM.View
             var _button = new Button()
             {
                 Background = Brushes.Transparent,
-                Width= 50,
+                Width = 50,
             };
             //create image
             var ButtonImage = new Image()

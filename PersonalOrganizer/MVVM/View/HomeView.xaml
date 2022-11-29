@@ -173,9 +173,11 @@
                             </Grid.ColumnDefinitions>
                             <Button Grid.Column="0"
                                 x:Name="leftArrow"
+                                    Template="{StaticResource ButtonTemplate}" 
                                 Padding="15"
                                 Background="Transparent"
                                 Click="LeftArrowButton_Click">
+                                
                                 <Image Source="/Images/lArrow.png" />
                             </Button>
                             <DatePicker Grid.Column="1"
@@ -200,6 +202,7 @@
                             <Button Grid.Column="3"
                                 x:Name="RightArrow"
                                 Padding="15" 
+                                    Template="{StaticResource ButtonTemplate}" 
                                 Background="Transparent"
                                 Click="RightArrowButton_Click">
                                 <Image Source="/Images/rArrow.png" />

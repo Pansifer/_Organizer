@@ -210,13 +210,14 @@
                         Visibility="Visible"
                         x:Name="AddButtonWrapper"
                         Background="{StaticResource CoolBlue}">
-                        <Button Background="Transparent"
+                        <Button Template="{StaticResource ButtonTemplate}" 
+                                     Background="Transparent"
                                      Foreground="white"
                                      Content="+"
                                      FontSize="35"
                                      VerticalAlignment="Stretch"
                                      HorizontalAlignment="Stretch"
-                                    Click="AddButton_Click"/>
+                                     Click="AddButton_Click"/>
                     </Border>
             
             </Grid>
